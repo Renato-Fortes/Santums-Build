@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global colors & fonts for Santums Build */
+:root {
+  --background: #0A0F1F;
+  --midnight: #0A0F1F;
+  --surface: #151B2E;
+  --primary: #FF6B00;
+  --primary-light: #FFA733;
+  --primary-dark: #E65A00;
+  --muted: #9CA3AF;
+  --text: #F5F5F5;
+}
+
+@layer base {
+  * {
+    @apply border-gray-700;
+  }
+  
+  body {
+    @apply bg-midnight text-text antialiased;
+    background: linear-gradient(180deg, #0A0F1F 0%, #0D1428 50%, #0A0F1F 100%);
+    background-attachment: fixed;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255, 107, 0, 0.5),
+                 0 0 30px rgba(255, 107, 0, 0.3),
+                 0 0 40px rgba(255, 107, 0, 0.2);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.3),
+                0 0 40px rgba(255, 107, 0, 0.2),
+                0 0 60px rgba(255, 107, 0, 0.1);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-primaryLight bg-clip-text text-transparent;
+  }
+}

@@ -1,0 +1,10 @@
+# Redirect www to non-www
+https://www.santums.com/* https://santums.com/:splat 301!
+
+# Redirect http to https (handled by Cloudflare, but explicit rule)
+http://santums.com/* https://santums.com/:splat 301!
+http://www.santums.com/* https://santums.com/:splat 301!
+
+# Redirect old paths if any (examples for future use)
+# /old-path /new-path 301
+# /blog/* /news/:splat 301

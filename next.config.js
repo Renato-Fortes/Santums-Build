@@ -2,12 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    unoptimized: true, // Cloudflare handles images differently
   },
-  // Cloudflare Pages compatibility
   experimental: {
     serverActions: {
-      bodySizeLimit: '2mb',
+      bodySizeLimit: '2mb', // your previous custom setting
     },
   },
 };

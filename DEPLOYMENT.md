@@ -70,10 +70,11 @@ git push -u origin main
 3. **Configure Build Settings**
    ```
    Production branch: main
-   Framework preset: Next.js
+   Framework preset: Next.js (Cloudflare will auto-detect)
    Build command: npm run build
-   Build output directory: .next
+   Build output directory: (auto-detected by Cloudflare)
    Root directory: (leave empty)
+   Node.js version: 18
    ```
 
 4. **Environment Variables** (Critical!)

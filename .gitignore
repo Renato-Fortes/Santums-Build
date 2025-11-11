@@ -20,6 +20,10 @@
 # production
 /build
 
+# Cloudflare Pages
+/.vercel/
+.wrangler/
+
 # misc
 .DS_Store
 *.pem

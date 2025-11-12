@@ -1,10 +1,7 @@
 name = "santums-build"
-main = "_worker.js"
 compatibility_date = "2025-11-11"
 compatibility_flags = ["nodejs_compat"]
 
-# 👇 This line tells Cloudflare Pages where to find the build output
+# 👇 For Cloudflare Pages only
 pages_build_output_dir = ".next"
 
-[build]
-command = "npm run build"

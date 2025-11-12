@@ -1,0 +1,11 @@
+name = "santums-build"
+main = "_worker.js"
+compatibility_date = "2025-11-11"
+compatibility_flags = ["nodejs_compat"]
+
+[site]
+bucket = ".next"
+entry-point = "_worker.js"
+
+[build]
+command = "npm run build"

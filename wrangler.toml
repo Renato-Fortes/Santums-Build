@@ -3,9 +3,8 @@ main = "_worker.js"
 compatibility_date = "2025-11-11"
 compatibility_flags = ["nodejs_compat"]
 
-[site]
-bucket = ".next"
-entry-point = "_worker.js"
+# 👇 This line tells Cloudflare Pages where to find the build output
+pages_build_output_dir = ".next"
 
 [build]
 command = "npm run build"

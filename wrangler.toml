@@ -4,13 +4,9 @@ compatibility_flags = ["nodejs_compat"]
 
 # 👇 Cloudflare Pages configuration
 pages_build_output_dir = ".next"
+build_command = "npm run build"
 
-[build]
-command = "npm run build"
-
-# 👇 Exclude heavy and unnecessary files from upload
-[site]
-bucket = ".next"
+# 👇 Exclude heavy folders manually
 exclude = [
   ".next/cache/**",
   "node_modules/**",
@@ -21,3 +17,4 @@ exclude = [
   ".env.local",
   ".env.production"
 ]
+

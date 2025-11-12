@@ -2,19 +2,10 @@ name = "santums-build"
 compatibility_date = "2025-11-11"
 compatibility_flags = ["nodejs_compat"]
 
-# 👇 Cloudflare Pages configuration
+# For Cloudflare Pages
 pages_build_output_dir = ".next"
-build_command = "npm run build"
 
-# 👇 Exclude heavy folders manually
-exclude = [
-  ".next/cache/**",
-  "node_modules/**",
-  ".git/**",
-  ".github/**",
-  ".vscode/**",
-  ".env",
-  ".env.local",
-  ".env.production"
-]
+[build]
+command = "npm run build"
+
 

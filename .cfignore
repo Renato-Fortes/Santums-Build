@@ -1,40 +1,28 @@
 # Cloudflare Pages .cfignore
-# Prevents uploading large cache files and unnecessary artifacts
+# CRITICAL: Prevents uploading cache files that exceed 25MB limit
 
-# Next.js cache and build artifacts (can exceed 25MB limit)
-.next/cache/
+# Next.js cache directory (47+ MB - exceeds Cloudflare 25MB limit)
+.next/cache
+
+# Other large build artifacts
 .next/trace
-.next/*.js.nft.json
 
-# Dependencies (installed during build)
-node_modules/
+# Dependencies (reinstalled during build)
+node_modules
 
 # Version control
-.git/
-.github/
-.gitignore
+.git
+.github
 
-# Environment files (set in Cloudflare dashboard)
+# Environment files (configured in Cloudflare dashboard)
 .env*
-!.env.example
 
 # Development files
-.vscode/
-.idea/
+.vscode
+.idea
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# Testing
-coverage/
-.nyc_output/
-
-# Documentation (optional - remove if you want docs deployed)
-*.md
-!README.md
 

@@ -48,6 +48,27 @@ pages_build_output_dir = ".next"
 
 ---
 
+### 2.5. **Deleted Adapter-Related Files** ⚠️ CRITICAL
+
+**Deleted:**
+- `/functions/[[path]].js` - Old adapter request handler
+- `/_worker.js` - Old adapter worker file
+
+**Why:**
+- These files imported `@cloudflare/next-on-pages` causing build errors
+- NOT needed for native Next.js runtime
+- Cloudflare automatically handles routing for Next.js projects
+- Caused error: `Could not resolve "@cloudflare/next-on-pages"`
+
+**Error Fixed:**
+```
+✘ [ERROR] Could not resolve "@cloudflare/next-on-pages"
+    [[path]].js:1:37:
+    1 │ import { createRequestHandler } from "@cloudflare/next-on-pages";
+```
+
+---
+
 ### 3. **.cfignore** - Enhanced to Prevent 25MB File Upload Errors
 
 **Enhanced with comprehensive exclusions:**

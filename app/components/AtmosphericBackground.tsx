@@ -1,17 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useMemo } from "react";
 
 export default function AtmosphericBackground() {
-  // Generate random particles
-  const particles = Array.from({ length: 20 }, (_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 4 + 2,
-    duration: Math.random() * 20 + 15,
-    delay: Math.random() * 5,
-  }));
+  // ✅ Generate random particles once, safely for React
+  const particles = useMemo(() => {
+    return Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 4 + 2,
+      duration: Math.random() * 20 + 15,
+      delay: Math.random() * 5,
+      // also randomize the side movement once here
+      horizontalShift: Math.random() * 50 - 25,
+    }));
+  }, []);
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
@@ -48,7 +53,7 @@ export default function AtmosphericBackground() {
           }}
           animate={{
             y: [0, -100, 0],
-            x: [0, Math.random() * 50 - 25, 0],
+            x: [0, particle.horizontalShift, 0], // ✅ random shift precomputed
             opacity: [0, 0.6, 0],
             scale: [1, 1.5, 1],
           }}

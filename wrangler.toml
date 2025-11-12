@@ -1,11 +1,6 @@
 name = "santums-build"
 compatibility_date = "2025-11-11"
 compatibility_flags = ["nodejs_compat"]
-
-# For Cloudflare Pages
 pages_build_output_dir = ".next"
-
-[build]
-command = "npm run build"
 
 
